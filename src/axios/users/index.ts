@@ -48,7 +48,7 @@ export async function changePassword(values: {
   newPassword: string;
 }) {
   const { accountId, password, newPassword } = values;
-  const response = await axiosInstance.post(
+  const response = await axiosInstance.put(
     '/auth/change-password',
     { accountId, password },
     {
