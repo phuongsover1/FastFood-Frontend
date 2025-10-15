@@ -19,9 +19,8 @@ import DomesticCardImage from '@/assets/Logo VietinBank .svg';
 import ZaloPayImage from '@/assets/Logo ZaloPay.svg';
 import ShopeePayImage from '@/assets/Logo ShopeePay.svg';
 import { useAppSelector } from '@/store';
-import axiosInstance from '@/axios/axios';
+import axiosInstance, { BACKEND_URL } from '@/axios/axios';
 import { handleMoney } from '@/shared/Utils';
-import { IP_ADDR } from '@/axios/axios';
 // import ticketApi from '../../../api/ticketApi';
 
 const leftStyle = {
@@ -386,7 +385,7 @@ const QRScan = () => {
               </Typography.Title>
               {bill && (
                 <QRCode
-                  value={`http://${IP_ADDR}/api/bills/paid/${bill.billId}?qr_path=http://${IP_ADDR}/api/bills/paid/${bill.billId}`}
+                  value={`${BACKEND_URL}/api/bills/paid/${bill.billId}?qr_path=${BACKEND_URL}/api/bills/paid/${bill.billId}`}
                   status={qrStatus ? 'active' : 'expired'}
                 />
               )}
