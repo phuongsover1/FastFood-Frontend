@@ -1,6 +1,6 @@
 import axios from "axios";
-export const IP_ADDR = "localhost:8080"
+export const BACKEND_URL = "https://phuongsaa.click"
 const axiosInstance = axios.create({
-  baseURL: `http://${IP_ADDR}/api`,
+  baseURL: `${BACKEND_URL}/api`,
 })
 export default axiosInstance;
